@@ -7,112 +7,30 @@
         "colab_type": "text"
       },
       "source": [
-        "<a href=\"https://colab.research.google.com/github/Jamesjoe578/gatsby-starter-blog/blob/main/geoscience/speed-and-structure/speed-and-structure-starter-notebook/speed-and-structure-starter-notebook.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+        "<a href=\"https://colab.research.google.com/github/Jamesjoe578/gatsby-starter-blog/blob/main/geoscience/speed-and-structure/speed-and-structure-starter-notebook\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
       ]
     },
     {
       "cell_type": "code",
       "source": [
-        "!ls /content/\n"
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')"
       ],
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
-        "id": "-2iDkSTykwtG",
-        "outputId": "8e084025-8b3b-4b9c-d0c5-9fd46cfc8c7f"
+        "id": "NYQq3mCsydOj",
+        "outputId": "10715c1c-a296-4350-9f0d-61c37e1f2754"
       },
-      "id": "-2iDkSTykwtG",
-      "execution_count": 19,
+      "id": "NYQq3mCsydOj",
+      "execution_count": 22,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
-            "drive  sample_data  speed_and_structure\n"
-          ]
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "import os\n",
-        "import requests"
-      ],
-      "metadata": {
-        "id": "rpXnDUGFZGr1"
-      },
-      "id": "rpXnDUGFZGr1",
-      "execution_count": 2,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "\"\"\"def download_data(links_dict, save_dir = \"speed_and_structure\"):\n",
-        "  os.makedirs(save_dir, exist_ok=True)\n",
-        "  for name, url in links_dict.items():\n",
-        "    filepath = os.path.join(save_dir, name)\n",
-        "    print(f\"Downloading {name}\")\n",
-        "\n",
-        "    with requests.get(url, stream = True) as r:\n",
-        "      r.raise_for_status()\n",
-        "      with open(filepath, 'wb') as f:\n",
-        "        for chunk in r.iter_content(8192):\n",
-        "          if chunk:\n",
-        "            f.write(chunk)\n",
-        "      print(f\"Download success for {name}\")\"\"\""
-      ],
-      "metadata": {
-        "id": "WgY4iefgVmxb"
-      },
-      "id": "WgY4iefgVmxb",
-      "execution_count": 10,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [],
-      "metadata": {
-        "id": "Rd8zWQGCv4XW"
-      },
-      "id": "Rd8zWQGCv4XW",
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "\n"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "UKKHPdAlg18p",
-        "outputId": "a1367125-d0fd-4f5e-f450-0c8cd1b225e3"
-      },
-      "id": "UKKHPdAlg18p",
-      "execution_count": 12,
-      "outputs": [
-        {
-          "metadata": {
-            "tags": null
-          },
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "Extracting test.zip to speed_and_structure/test\n",
-            "Done extracting test.zip\n",
-            "Extracting train_ext2.zip to speed_and_structure/train_ext2\n",
-            "Done extracting train_ext2.zip\n",
-            "Extracting train_ext1.zip to speed_and_structure/train_ext1\n",
-            "Done extracting train_ext1.zip\n",
-            "Extracting train.zip to speed_and_structure/train\n",
-            "Done extracting train.zip\n",
-            "Keeping sample_submission.npz (npz file), no extraction\n",
-            "Moved .npz to speed_and_structure/sample_submission\n"
+            "Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(\"/content/drive\", force_remount=True).\n"
           ]
         }
       ]
@@ -153,31 +71,6 @@
       ]
     },
     {
-      "cell_type": "code",
-      "source": [
-        "from google.colab import drive\n",
-        "drive.mount('/content/drive')"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "i80M4M3-kpNo",
-        "outputId": "6ec137a6-59c2-4361-e953-3c3d788356e3"
-      },
-      "id": "i80M4M3-kpNo",
-      "execution_count": 14,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(\"/content/drive\", force_remount=True).\n"
-          ]
-        }
-      ]
-    },
-    {
       "cell_type": "markdown",
       "id": "8daaaebf",
       "metadata": {
@@ -210,6 +103,26 @@
       ]
     },
     {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "a7daeec7-c49b-47a3-8fda-3d1bccdeaa5e",
+      "metadata": {
+        "id": "a7daeec7-c49b-47a3-8fda-3d1bccdeaa5e"
+      },
+      "outputs": [],
+      "source": [
+        "import os\n",
+        "import sys\n",
+        "from glob import glob\n",
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "from anytree import Node, RenderTree\n",
+        "from typing import Dict, List\n",
+        "\n",
+        "from utils import *"
+      ]
+    },
+    {
       "cell_type": "markdown",
       "id": "9660e7aa-8c61-4a53-abbe-913f9b52c650",
       "metadata": {
@@ -223,6 +136,32 @@
         "Let's assume that you have downloaded the train and test data, and organized them as shown in the tree below.\n",
         "\n",
         "<b>Note:</b> For demonstration purposes in this starter notebook, only a subset of the full dataset is included: 5 samples in the train folder and 4 samples in the test folder.  Please note that in the complete dataset, these numbers will be expanded to 2000 training samples and 150 test samples, respectively."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "d976dbcb-e534-45cc-a80e-eee4f681c0be",
+      "metadata": {
+        "id": "d976dbcb-e534-45cc-a80e-eee4f681c0be",
+        "outputId": "5d9adb3c-92a9-4a3f-b545-ca324a36adb1"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "current_directory\n",
+            "├── starter_notebook.ipynb\n",
+            "├── utils.py\n",
+            "└── data\n",
+            "    ├── train\n",
+            "    └── test\n"
+          ]
+        }
+      ],
+      "source": [
+        "sketch_directory_tree()"
       ]
     },
     {
@@ -247,7 +186,7 @@
       "id": "e0ae445f-a65f-4935-a9af-1840f0fe80c0",
       "metadata": {
         "id": "e0ae445f-a65f-4935-a9af-1840f0fe80c0",
-        "outputId": "d0e20eec-77ba-4dff-e667-0e42108466b0"
+        "outputId": "530a0ec2-ea82-4b84-a196-be1bca653118"
       },
       "outputs": [
         {
@@ -282,7 +221,7 @@
       "id": "a07be272-6e41-4fa7-82a7-27b3c2f707aa",
       "metadata": {
         "id": "a07be272-6e41-4fa7-82a7-27b3c2f707aa",
-        "outputId": "4fee5095-4c25-4d6d-ff48-0f1ed424c794"
+        "outputId": "5ce26103-895b-4e54-df79-145367546fac"
       },
       "outputs": [
         {
@@ -332,7 +271,7 @@
       "id": "e6c7d4d3-32a6-4fc3-8f80-9ffd19caedfa",
       "metadata": {
         "id": "e6c7d4d3-32a6-4fc3-8f80-9ffd19caedfa",
-        "outputId": "bc31d94c-664f-41e0-ff39-2f80cdb0c8f7"
+        "outputId": "1f93c828-d818-41f7-adbf-76568269d9ae"
       },
       "outputs": [
         {
@@ -373,7 +312,7 @@
       "id": "22a43ee5-1d1e-423e-8bde-2b9b91ad8a9c",
       "metadata": {
         "id": "22a43ee5-1d1e-423e-8bde-2b9b91ad8a9c",
-        "outputId": "335e3ecc-a267-47f8-f695-43cfbdcdbbf5"
+        "outputId": "a5c8981f-553e-45a0-d734-88eb4c9a9b4d"
       },
       "outputs": [
         {
@@ -486,7 +425,7 @@
       "id": "8263334e-24c7-42a1-a2d9-f642e802fc88",
       "metadata": {
         "id": "8263334e-24c7-42a1-a2d9-f642e802fc88",
-        "outputId": "eb170f11-e5e9-49b5-e099-4b3bc6cf8c08"
+        "outputId": "d58eeab3-de77-4633-de29-027989840007"
       },
       "outputs": [
         {
@@ -585,7 +524,7 @@
       "id": "16a427bc-27ee-4387-9668-424385b034c6",
       "metadata": {
         "id": "16a427bc-27ee-4387-9668-424385b034c6",
-        "outputId": "178d112a-497a-4fe3-d8a0-4e93468144a4"
+        "outputId": "b84d4bdb-aee8-4ee1-9243-eb0146e272cf"
       },
       "outputs": [
         {
@@ -622,7 +561,7 @@
       "id": "cdf3a9d5-0331-4cb7-afc8-117a80eb8aa2",
       "metadata": {
         "id": "cdf3a9d5-0331-4cb7-afc8-117a80eb8aa2",
-        "outputId": "77f53f54-aa1c-4ff3-8d5b-1693bd038d7b"
+        "outputId": "77a905fc-e1d5-417f-e284-99780a2ddb13"
       },
       "outputs": [
         {
@@ -699,11 +638,21 @@
   ],
   "metadata": {
     "kernelspec": {
-      "display_name": "Python 3",
-      "name": "python3"
+      "display_name": "ursa",
+      "language": "python",
+      "name": "ursa"
     },
     "language_info": {
-      "name": "python"
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.13.0"
     },
     "colab": {
       "provenance": [],
